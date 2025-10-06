@@ -48,7 +48,8 @@ namespace MascotaSnacksAPI.Controllers
                     Raza = m.Raza,
                     FechaNacimiento = m.FechaNacimiento,
                     Tamaño = m.Tamaño,
-                    NotasAdicionales = m.NotasAdicionales
+                    NotasAdicionales = m.NotasAdicionales,
+                    Avatar = m.Avatar
                 })
                 .ToListAsync();
 
@@ -72,7 +73,8 @@ namespace MascotaSnacksAPI.Controllers
                     Raza = m.Raza,
                     FechaNacimiento = m.FechaNacimiento,
                     Tamaño = m.Tamaño,
-                    NotasAdicionales = m.NotasAdicionales
+                    NotasAdicionales = m.NotasAdicionales,
+                    Avatar = m.Avatar
                 })
                 .FirstOrDefaultAsync();
 
@@ -104,7 +106,8 @@ namespace MascotaSnacksAPI.Controllers
                 Raza = mascotaDto.Raza,
                 FechaNacimiento = mascotaDto.FechaNacimiento,
                 Tamaño = mascotaDto.Tamaño,
-                NotasAdicionales = mascotaDto.NotasAdicionales
+                NotasAdicionales = mascotaDto.NotasAdicionales,
+                Avatar = mascotaDto.Avatar
             };
 
             _context.Mascotas.Add(nuevaMascota);
@@ -118,7 +121,8 @@ namespace MascotaSnacksAPI.Controllers
                 Raza = nuevaMascota.Raza,
                 FechaNacimiento = nuevaMascota.FechaNacimiento,
                 Tamaño = nuevaMascota.Tamaño,
-                NotasAdicionales = nuevaMascota.NotasAdicionales
+                NotasAdicionales = nuevaMascota.NotasAdicionales,
+                Avatar = nuevaMascota.Avatar
             };
 
             return CreatedAtAction(nameof(GetMascota), new { id = nuevaMascota.MascotaID }, createdMascotaDto);
@@ -145,6 +149,7 @@ namespace MascotaSnacksAPI.Controllers
             mascota.FechaNacimiento = mascotaDto.FechaNacimiento;
             mascota.Tamaño = mascotaDto.Tamaño;
             mascota.NotasAdicionales = mascotaDto.NotasAdicionales;
+            mascota.Avatar = mascotaDto.Avatar;
 
             await _context.SaveChangesAsync();
 

@@ -12,6 +12,7 @@ namespace MascotaSnacksAPI.DTOs.Mascotas
         public DateTime? FechaNacimiento { get; set; }
         public string? Tamaño { get; set; }
         public string? NotasAdicionales { get; set; }
+        public string? Avatar { get; set; }
     }
 
     public class CrearMascotaDto
@@ -33,5 +34,8 @@ namespace MascotaSnacksAPI.DTOs.Mascotas
         public string? Tamaño { get; set; } // "Pequeño", "Mediano", "Grande"
 
         public string? NotasAdicionales { get; set; }
+
+        [StringLength(255)]
+        public string? Avatar { get; set; }
     }
 }

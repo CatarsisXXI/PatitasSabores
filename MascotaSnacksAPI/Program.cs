@@ -30,6 +30,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddSingleton<AdminActivityService>();
+builder.Services.AddHttpClient();
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

@@ -26,6 +26,8 @@ import OrderConfirmationPage from './pages/OrderConfirmationPage';
 import BoletaPage from './pages/BoletaPage';
 import MisComprasPage from './pages/MisComprasPage';
 import MisBoletasPage from './pages/MisBoletasPage';
+import MascotasPage from './pages/MascotasPage';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -48,6 +50,7 @@ function App() {
           <Route path="/mis-compras" element={<MisComprasPage />} />
           <Route path="/mis-boletas" element={<MisBoletasPage />} />
           <Route path="/favoritos" element={<FavoritosPage />} />
+          <Route path="/mascotas" element={<MascotasPage />} />
 
           {/* Admin Routes with Admin Theme */}
           <Route path="/admin" element={<AdminRoute><AdminLayout><AdminDashboard /></AdminLayout></AdminRoute>} />
@@ -61,6 +64,7 @@ function App() {
             {/* Add other routes here */}
           </Routes>
         </Box>
+        <Chatbot />
         {/* <Footer /> */}
       </CartProvider>
     </Router>

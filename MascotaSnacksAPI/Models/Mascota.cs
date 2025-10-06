@@ -30,6 +30,9 @@ namespace MascotaSnacksAPI.Models
 
         public string? NotasAdicionales { get; set; }
 
+        [StringLength(255)]
+        public string? Avatar { get; set; } // URL o path del avatar seleccionado
+
         // Propiedad de navegación
         [ForeignKey("ClienteID")]
         public Cliente Cliente { get; set; } = null!;

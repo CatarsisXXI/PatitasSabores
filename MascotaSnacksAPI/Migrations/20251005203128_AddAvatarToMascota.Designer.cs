@@ -4,6 +4,7 @@ using MascotaSnacksAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MascotaSnacksAPI.Migrations
 {
     [DbContext(typeof(MascotaSnacksContext))]
-    partial class MascotaSnacksContextModelSnapshot : ModelSnapshot
+    [Migration("20251005203128_AddAvatarToMascota")]
+    partial class AddAvatarToMascota
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

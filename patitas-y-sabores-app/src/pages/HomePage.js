@@ -186,7 +186,7 @@ const HomePage = () => {
                     lineHeight: 1.4
                   }}
                 >
-                  Los mejores snacks para los miembros más peludos de tu familia
+                  Los mejores productos para los miembros más peludos de tu familia
                 </Typography>
               </Slide>
 

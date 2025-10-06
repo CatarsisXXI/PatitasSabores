@@ -90,6 +90,11 @@ const Navbar = () => {
                       Mis Boletas
                     </Button>
                   </Grow>
+                  <Grow in={true} timeout={1900}>
+                    <Button color="inherit" component={Link} to="/mascotas" sx={{ mr: 1, fontWeight: 'bold' }}>
+                      Mascotas
+                    </Button>
+                  </Grow>
                   <Grow in={true} timeout={2000}>
                     <IconButton component={Link} to="/favoritos" color="inherit" aria-label="favoritos">
                       <Badge badgeContent={favoritesCount} color="error">
