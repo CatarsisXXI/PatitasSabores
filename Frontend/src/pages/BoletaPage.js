@@ -38,15 +38,20 @@ const BoletaPage = () => {
         return <div className="boleta-container"><h2>Cargando boleta...</h2></div>;
     }
 
-    const subtotal = pedido.detalles.reduce((sum, item) => sum + item.precioUnitario * item.cantidad, 0);
-    const igv = subtotal * 0.18;
-    const total = subtotal + igv;
+    // Since the product price already includes IGV, the total is just the sum of item totals
+    const total = pedido.detalles.reduce((sum, item) => sum + item.precioUnitario * item.cantidad, 0);
+    const subtotal = total / 1.18;
+    const igv = total - subtotal;
 
     return (
         <div className="boleta-container">
             <div className="boleta">
                 <div className="boleta-header">
-                    <h1>Boleta de Venta Electrónica</h1>
+                    <div className="empresa-info">
+                        <h2>Patitas y Sabores</h2>
+                        <p>Dirección: Calle Ficticia 123, Lima, Perú</p>
+                        <p>Teléfono: (01) 123-4567</p>
+                    </div>
                     <div className="boleta-info">
                         <p><strong>RUC:</strong> 20123456789</p>
                         <p><strong>Nro. Boleta:</strong> B001-{String(pedido.pedidoID).padStart(6, '0')}</p>
@@ -55,7 +60,7 @@ const BoletaPage = () => {
 
                 <div className="cliente-info">
                     <h3>Datos del Cliente</h3>
-                    <p><strong>Cliente:</strong> {pedido.c}</p>
+                    <p><strong>Cliente:</strong> {pedido.nombreCliente}</p>
                     <p><strong>Dirección de Envío:</strong> {pedido.direccionEnvio}</p>
                     <p><strong>Fecha de Emisión:</strong> {new Date(pedido.fechaPedido).toLocaleDateString()}</p>
                 </div>
@@ -63,7 +68,7 @@ const BoletaPage = () => {
                 <table className="productos-table">
                     <thead>
                         <tr>
-                            <th>Producto</th>
+                            <th>Descripción del Producto</th>
                             <th>Cantidad</th>
                             <th>Precio Unit.</th>
                             <th>Total</th>

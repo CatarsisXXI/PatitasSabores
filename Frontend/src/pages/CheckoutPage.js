@@ -125,7 +125,7 @@ const CheckoutPage = () => {
             metodoPago: {
                 nombreTitular: formData.nombreTitular,
                 numeroTarjeta: formData.numeroTarjeta,
-                fechaExpiracion: formData.fechaExpiracion,
+                fechaExpiracion: formData.fechaExpiracion.replace('/', ''), // Remove slash for backend
                 cvv: formData.cvv
             }
         };
