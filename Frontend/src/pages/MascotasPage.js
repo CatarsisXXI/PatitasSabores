@@ -253,7 +253,7 @@ const MascotasPage = () => {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <FormControl fullWidth required>
+                <FormControl fullWidth required sx={{ minWidth: 120 }}>
                   <InputLabel>Especie</InputLabel>
                   <Select
                     name="especie"
@@ -267,7 +267,7 @@ const MascotasPage = () => {
                 </FormControl>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <FormControl fullWidth>
+                <FormControl fullWidth sx={{ minWidth: 120 }}>
                   <InputLabel>Sexo</InputLabel>
                   <Select
                     name="sexo"
@@ -301,7 +301,7 @@ const MascotasPage = () => {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <FormControl fullWidth>
+                <FormControl fullWidth sx={{ minWidth: 120 }}>
                   <InputLabel>Tamaño</InputLabel>
                   <Select
                     name="tamaño"
