@@ -84,6 +84,15 @@ const ProductCard = ({ product }) => {
         </Typography>
         <Typography variant="h6" color="primary" sx={{ mt: 2 }}>
           S/{product.precio}
+          {product.stock > 0 ? (
+            <Typography variant="body2" color="text.secondary" sx={{ display: 'inline', ml: 1 }}>
+              (Stock: {product.stock})
+            </Typography>
+          ) : (
+            <Typography variant="body2" color="error" sx={{ display: 'inline', ml: 1, fontWeight: 'bold' }}>
+              Sin Stock
+            </Typography>
+          )}
         </Typography>
       </CardContent>
       <CardActions>

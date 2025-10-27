@@ -35,7 +35,6 @@ namespace MascotaSnacksAPI.DTOs.Pedidos
     public class MetodoPagoDto
     {
         [Required(ErrorMessage = "El número de la tarjeta es obligatorio.")]
-        [CreditCard(ErrorMessage = "El número de la tarjeta no es válido.")]
         public string NumeroTarjeta { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "El nombre del titular es obligatorio.")]

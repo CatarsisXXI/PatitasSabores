@@ -96,13 +96,19 @@ const ProductoDetallePage = () => {
           </Typography>
           <Typography variant="h5" sx={{ my: 2 }}>
             {formatCurrency(product.precio)}
+            {product.stock > 0 ? (
+              <Typography variant="body2" color="text.secondary" sx={{ display: 'inline', ml: 1 }}>
+                (Stock: {product.stock})
+              </Typography>
+            ) : (
+              <Typography variant="body2" color="error" sx={{ display: 'inline', ml: 1, fontWeight: 'bold' }}>
+                Sin Stock
+              </Typography>
+            )}
           </Typography>
 
           <Typography variant="body1" paragraph>
             {product.descripcion}
-          </Typography>
-          <Typography variant="body2" color={product.stock > 0 ? 'green' : 'red'}>
-            {product.stock > 0 ? `Disponible (${product.stock} en stock)` : 'Agotado'}
           </Typography>
           <Box sx={{ mt: 3, display: 'flex', gap: 2 }}>
             <Button

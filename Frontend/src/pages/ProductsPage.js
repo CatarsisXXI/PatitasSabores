@@ -353,6 +353,11 @@ const ProductsPage = () => {
             <Typography variant="h6">
               {filteredProducts.length} producto{filteredProducts.length !== 1 ? 's' : ''} encontrado{filteredProducts.length !== 1 ? 's' : ''}
             </Typography>
+            {filteredProducts.length > 0 && (
+              <Typography variant="body2" color="text.secondary">
+                {filteredProducts.filter(p => p.stock > 0).length} en stock, {filteredProducts.filter(p => p.stock === 0).length} agotados
+              </Typography>
+            )}
           </Box>
 
           {/* Products Grid */}

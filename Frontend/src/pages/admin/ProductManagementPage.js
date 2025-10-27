@@ -285,9 +285,9 @@ const ProductManagementPage = () => {
                 <TableCell>S/ {product.precio.toFixed(2)}</TableCell>
                 <TableCell>{product.stock}</TableCell>
                 <TableCell>
-                  <Chip
-                    label={product.activo ? 'Activo' : 'Inactivo'}
-                    color={product.activo ? 'success' : 'error'}
+                <Chip
+                    label={product.activo ? (product.stock > 0 ? 'Activo' : 'Agotado') : 'Inactivo'}
+                    color={product.activo ? (product.stock > 0 ? 'success' : 'warning') : 'error'}
                     size="small"
                   />
                 </TableCell>
