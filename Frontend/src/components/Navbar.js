@@ -6,30 +6,14 @@ import PetsIcon from '@mui/icons-material/Pets';
 
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
-import { useState, useEffect } from 'react';
-import favoritoService from '../services/favoritoService';
+import { useFavorites } from '../context/FavoritesContext';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
   const { cart } = useCart();
-
-  const [favoritesCount, setFavoritesCount] = useState(0);
+  const { favoritesCount } = useFavorites();
 
   const itemCount = cart?.items?.reduce((sum, item) => sum + item.cantidad, 0) || 0;
-
-  useEffect(() => {
-    const fetchFavoritesCount = async () => {
-      if (user) {
-        try {
-          const count = await favoritoService.getFavoritesCount();
-          setFavoritesCount(count);
-        } catch (error) {
-          console.error('Failed to fetch favorites count', error);
-        }
-      }
-    };
-    fetchFavoritesCount();
-  }, [user]);
 
   // Function to format the display name
   const getDisplayName = (fullName, role) => {
@@ -85,11 +69,7 @@ const Navbar = () => {
                       Mis Compras
                     </Button>
                   </Grow>
-                  <Grow in={true} timeout={1800}>
-                    <Button color="inherit" component={Link} to="/mis-boletas" sx={{ mr: 1, fontWeight: 'bold' }}>
-                      Mis Boletas
-                    </Button>
-                  </Grow>
+
                   <Grow in={true} timeout={1900}>
                     <Button color="inherit" component={Link} to="/mascotas" sx={{ mr: 1, fontWeight: 'bold' }}>
                       Mascotas

@@ -8,6 +8,7 @@ namespace MascotaSnacksAPI.DTOs.Mascotas
         public int MascotaID { get; set; }
         public string Nombre { get; set; } = string.Empty;
         public string Especie { get; set; } = string.Empty;
+        public string? Sexo { get; set; }
         public string? Raza { get; set; }
         public DateTime? FechaNacimiento { get; set; }
         public string? Tamaño { get; set; }
@@ -24,6 +25,9 @@ namespace MascotaSnacksAPI.DTOs.Mascotas
         [Required]
         [StringLength(50)]
         public string Especie { get; set; } = string.Empty; // "Perro", "Gato"
+
+        [StringLength(20)]
+        public string? Sexo { get; set; } // "Hembra", "Macho"
 
         [StringLength(100)]
         public string? Raza { get; set; }

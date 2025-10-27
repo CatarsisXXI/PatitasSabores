@@ -9,7 +9,9 @@ body {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f6f8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #333;
 }
 

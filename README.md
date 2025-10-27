@@ -2,19 +2,19 @@
 
 Este proyecto contiene:
 
-- **MascotaSnacksAPI** → Backend en .NET (Web API).
-- **patitas-y-sabores-app** → Frontend en React.
-- **database** → bacpac SQL para migración a Azure SQL.
+- **Backend** → Backend en .NET (Web API).
+- **Frontend** → Frontend en React.
+- **Database** → bacpac SQL para migración a Azure SQL.
 
   
 ## ▶️ Cómo correr localmente
 
 ### Backend
-cd MascotaSnacksAPI
+cd Backend
 dotnet restore
 dotnet run
 
 ### Frontend
-cd patitas-y-sabores-app
+cd Frontend
 npm install
 npm start

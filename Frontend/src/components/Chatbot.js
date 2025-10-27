@@ -45,15 +45,25 @@ const ChatbotComponent = () => {
       chatButton: {
         backgroundColor: '#A8B5A0',
       },
+      chatContainer: {
+        backgroundImage: 'url(/assets/fondo.png)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      },
     },
-    customComponents: {
+      customComponents: {
       botAvatar: (props) => (
         <div {...props}>
           <img
-            src="https://1millionbot.com/wp-content/uploads/2018/09/coco-chatbot.png"
+            src="/assets/chatbot.png"
             alt="Coco Bot"
             style={{ width: '40px', height: '40px', borderRadius: '50%' }}
           />
+        </div>
+      ),
+      botChatMessage: (props) => (
+        <div {...props} style={{ backgroundColor: '#A8B5A0', borderRadius: '10px', padding: '10px', margin: '5px' }}>
+          {props.children}
         </div>
       ),
     },

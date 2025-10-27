@@ -50,6 +50,7 @@ const MascotasPage = () => {
   const [formData, setFormData] = useState({
     nombre: '',
     especie: '',
+    sexo: '',
     raza: '',
     fechaNacimiento: '',
     tamaño: '',
@@ -84,6 +85,7 @@ const MascotasPage = () => {
       setFormData({
         nombre: mascota.nombre,
         especie: mascota.especie,
+        sexo: mascota.sexo || '',
         raza: mascota.raza || '',
         fechaNacimiento: mascota.fechaNacimiento ? mascota.fechaNacimiento.split('T')[0] : '',
         tamaño: mascota.tamaño || '',
@@ -95,6 +97,7 @@ const MascotasPage = () => {
       setFormData({
         nombre: '',
         especie: '',
+        sexo: '',
         raza: '',
         fechaNacimiento: '',
         tamaño: '',
@@ -260,6 +263,20 @@ const MascotasPage = () => {
                   >
                     <MenuItem value="Perro">Perro</MenuItem>
                     <MenuItem value="Gato">Gato</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <FormControl fullWidth>
+                  <InputLabel>Sexo</InputLabel>
+                  <Select
+                    name="sexo"
+                    value={formData.sexo}
+                    onChange={handleChange}
+                    label="Sexo"
+                  >
+                    <MenuItem value="Hembra">Hembra</MenuItem>
+                    <MenuItem value="Macho">Macho</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>

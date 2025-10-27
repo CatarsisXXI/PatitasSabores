@@ -45,6 +45,7 @@ namespace MascotaSnacksAPI.Controllers
                     MascotaID = m.MascotaID,
                     Nombre = m.Nombre,
                     Especie = m.Especie,
+                    Sexo = m.Sexo,
                     Raza = m.Raza,
                     FechaNacimiento = m.FechaNacimiento,
                     Tamaño = m.Tamaño,
@@ -70,6 +71,7 @@ namespace MascotaSnacksAPI.Controllers
                     MascotaID = m.MascotaID,
                     Nombre = m.Nombre,
                     Especie = m.Especie,
+                    Sexo = m.Sexo,
                     Raza = m.Raza,
                     FechaNacimiento = m.FechaNacimiento,
                     Tamaño = m.Tamaño,
@@ -103,6 +105,7 @@ namespace MascotaSnacksAPI.Controllers
                 ClienteID = clienteId,
                 Nombre = mascotaDto.Nombre,
                 Especie = mascotaDto.Especie,
+                Sexo = mascotaDto.Sexo,
                 Raza = mascotaDto.Raza,
                 FechaNacimiento = mascotaDto.FechaNacimiento,
                 Tamaño = mascotaDto.Tamaño,
@@ -118,6 +121,7 @@ namespace MascotaSnacksAPI.Controllers
                 MascotaID = nuevaMascota.MascotaID,
                 Nombre = nuevaMascota.Nombre,
                 Especie = nuevaMascota.Especie,
+                Sexo = nuevaMascota.Sexo,
                 Raza = nuevaMascota.Raza,
                 FechaNacimiento = nuevaMascota.FechaNacimiento,
                 Tamaño = nuevaMascota.Tamaño,
@@ -145,6 +149,7 @@ namespace MascotaSnacksAPI.Controllers
 
             mascota.Nombre = mascotaDto.Nombre;
             mascota.Especie = mascotaDto.Especie;
+            mascota.Sexo = mascotaDto.Sexo;
             mascota.Raza = mascotaDto.Raza;
             mascota.FechaNacimiento = mascotaDto.FechaNacimiento;
             mascota.Tamaño = mascotaDto.Tamaño;

@@ -19,6 +19,9 @@ namespace MascotaSnacksAPI.Models
         [StringLength(50)]
         public string Especie { get; set; } = string.Empty; // "Perro", "Gato"
 
+        [StringLength(20)]
+        public string? Sexo { get; set; } // "Hembra", "Macho"
+
 
         [StringLength(100)]
         public string? Raza { get; set; }

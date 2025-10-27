@@ -152,7 +152,7 @@ const ProductCarousel = () => {
               fontSize: '1.1rem'
             }}
           >
-            ${currentProduct.precio}
+            S/. {currentProduct.precio}
           </Typography>
 
           <Chip

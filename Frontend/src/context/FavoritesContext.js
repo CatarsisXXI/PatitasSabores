@@ -45,16 +45,25 @@ export const FavoritesProvider = ({ children }) => {
       }
     } catch (error) {
       console.error("Error toggling favorite:", error);
+      // Revert local state if backend call fails
+      if (isFavorite) {
+        setFavorites(prev => [...prev, productoId]);
+      } else {
+        setFavorites(prev => prev.filter(id => id !== productoId));
+      }
     }
   };
 
   const isFavorite = (productoId) => favorites.includes(productoId);
 
+  const favoritesCount = favorites.length;
+
   const value = {
     favorites,
     toggleFavorite,
     isFavorite,
-    loading
+    loading,
+    favoritesCount
   };
 
   return (
