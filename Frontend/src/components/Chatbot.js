@@ -41,29 +41,24 @@ const ChatbotComponent = () => {
     customStyles: {
       botMessageBox: {
         backgroundColor: '#A8B5A0',
+        color: '#000',
+      },
+      userMessageBox: {
+        backgroundColor: '#D4A574',
+        color: '#000',
       },
       chatButton: {
         backgroundColor: '#A8B5A0',
-      },
-      chatContainer: {
-        backgroundImage: 'url(/assets/fondo.png)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       },
     },
       customComponents: {
       botAvatar: (props) => (
         <div {...props}>
           <img
-            src="/assets/chatbot.png"
+            src="https://static.vecteezy.com/system/resources/previews/005/055/092/non_2x/cute-australian-shepherd-dog-avatar-cartoon-icon-illustration-vector.jpg"
             alt="Coco Bot"
             style={{ width: '40px', height: '40px', borderRadius: '50%' }}
           />
-        </div>
-      ),
-      botChatMessage: (props) => (
-        <div {...props} style={{ backgroundColor: '#A8B5A0', borderRadius: '10px', padding: '10px', margin: '5px' }}>
-          {props.children}
         </div>
       ),
     },
@@ -150,11 +145,13 @@ const ChatbotComponent = () => {
         });
 
         if (!response.ok) {
+          const errorData = await response.json();
+          console.error('Error response:', errorData);
           throw new Error('Error en la respuesta del servidor');
         }
 
         const data = await response.json();
-        const aiMessage = data.message;
+        const aiMessage = data.message || 'Lo siento, no pude procesar tu mensaje.';
         const message = createChatBotMessage(aiMessage);
         setState((prev) => ({
           ...prev,
@@ -172,8 +169,9 @@ const ChatbotComponent = () => {
 
     return (
       <div>
-        {React.Children.map(children, (child) => {
+        {React.Children.map(children, (child, index) => {
           return React.cloneElement(child, {
+            key: index,
             actions: {
               handleHello,
               handleRecommendations,
@@ -199,8 +197,9 @@ const ChatbotComponent = () => {
 
     return (
       <div>
-        {React.Children.map(children, (child) => {
+        {React.Children.map(children, (child, index) => {
           return React.cloneElement(child, {
+            key: index,
             parse: parse,
             actions: {},
           });
@@ -223,7 +222,11 @@ const ChatbotComponent = () => {
           '&:hover': { backgroundColor: '#8FA68E' },
         }}
       >
-        <ChatIcon />
+        <img
+          src="/assets/chatbot.png"
+          alt="Coco Bot"
+          style={{ width: '56px', height: '56px', borderRadius: '50%' }}
+        />
       </Fab>
     );
   }
